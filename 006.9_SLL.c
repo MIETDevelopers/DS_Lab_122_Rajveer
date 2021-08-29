@@ -14,7 +14,6 @@ void Insert_1st ();   // Funtion Prototype
 void randominsert();  // Funtion Prototype
 void random_delete();  // Funtion Prototype
 void display();   // Funtion Prototype
-void search();  
 void main ()  
 {  
     int choice; 
@@ -26,8 +25,7 @@ void main ()
 		printf("\n2.Insert At Specified Position");
 		printf("\n3.Delete From A Spefic Position");
 		printf("\n4.View ");
-		printf("\n5.Search ");
-		printf("\n6.Exit From Program"); 
+		printf("\n5.Exit From Program"); 
         printf("\nEnter your choice\n");         
         scanf("\n%d",&choice);  
         switch(choice)  
@@ -45,9 +43,6 @@ void main ()
             display();        
             break;  
             case 5:  
-            search();        
-            break;  
-            case 6:  
             exit(0);  
             break;  
             default:  
@@ -131,42 +126,6 @@ void random_delete()
     free(ptr);  
     printf("\nDeleted node %d ",loc+1);  
 }  
-void search()  
-{  
-    struct node *ptr;  
-    int item,i=0,flag;  
-    ptr = head;   
-    if(ptr == NULL)  
-    {  
-        printf("\nEmpty List\n");  
-    }  
-    else  
-    {   
-        printf("\nEnter item which you want to search?\n");   
-        scanf("%d",&item);  
-        while (ptr!=NULL)  
-        {  
-            if(ptr->data == item)  
-            {  
-                printf("\nitem found at location %d \n",i+1);  
-                printf("\nitem found at Index %d \n ",i);  
-                flag=0;  
-            }   
-            else  
-            {  
-                flag=1;  
-            }  
-            i++;  
-            ptr = ptr -> next;  
-        }  
-        if(flag==0)  
-        {  
-            printf("Item not found\n");  
-        }  
-    }     
-          
-}  
-  
 void display()  
 {  
     struct node *ptr;  
@@ -185,3 +144,4 @@ void display()
         }  
     }  
 }     
+              
